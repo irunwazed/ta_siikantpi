@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<?php
+	foreach ($seo->result_array() as $value) {
+		$tittle = $value['tittle'];
+		$keyword = $value['keyword'];
+		$description = $value['description'];
+	}
+	?>
+	<?php
+							foreach ($logo->result_array() as $value) {
+								$logo = $value['gambar'];
+							}?>
+	<link rel="icon" href="<?php echo base_url();?>images/logo/<?php echo $logo;?>">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyword" content="<?php echo $keyword;?>">
+    <meta name="description" content="<?php echo $description;?>">
+    <meta name="author" content="">
+    <title>Home | <?php echo $tittle;?></title>
+    <link href="<?php echo base_url();?>asset/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>asset/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>asset/css/prettyPhoto.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>asset/css/price-range.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>asset/css/animate.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>/asset/css/main.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>asset/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="<?php echo base_url();?>asset/js/html5shiv.js"></script>
+    <script src="<?php echo base_url();?>asset/js/respond.min.js"></script>
+    <![endif]-->       
+    <!-- <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png"> -->
+</head><!--/head-->
+
+<body>
+	<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<?php 
+						foreach ($kontak->result_array() as $value) {
+							$phone = $value['phone'];
+							$email = $value['email'];
+						}
+						?>
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href="#"><i class="fa fa-phone"></i> <?php echo $phone ?></a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> <?php echo $email ?></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<?php 
+							foreach ($sosial_media->result_array() as $value) {
+								$tw = $value['tw'];
+								$fb = $value['fb'];
+								$gp = $value['gp'];
+							}
+							?>
+							<ul class="nav navbar-nav">
+								<li><a href="<?php echo $fb;?>"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="<?php echo $tw;?>"><i class="fa fa-envelope"></i></a></li>
+								<li><a href="<?php echo $gp;?>"><i class="fa fa-phone"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
+		
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							
+							<a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo/<?php echo $logo;?>" alt="SI IKAN TPI" /></a>
+						</div>
+						<div class="btn-group pull-right">
+							
+							
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	
+		
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-10">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="<?php echo base_url();?>" class="active">Home</a></li>
+								<li><a href="<?php echo base_url();?>home/tentang_kami"> Tentang Kami</a></li>
+								<li><a href="<?php echo base_url();?>home/cara_belanja"> Cara Belanja</a></li>
+								<li><a href="<?php echo base_url();?>home/hubungi_kami"> Hubungi Kami</a></li>
+								<li><a href="<?php echo base_url();?>home/keranjang"> Keranjang Belanja</a></li>
+								<li><a href="<?php echo base_url();?>home/berita">Berita</a></li>	
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+
+	
+	
+	
+	
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+					<h2>Daftar</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+						<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Kategori
+										</a>
+									</h4>
+								</div>
+								<div id="mens" class="panel-collapse collapse">
+									<div class="panel-body">
+									<?php
+										foreach ($kategori->result_array() as $value) {?>
+										<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title"><a href="<?php echo base_url();?>home/kategori/<?php echo $value['id_kategori'];?>"><?php echo $value['nama_kategori'];?></a></h4>
+										</div>
+										</div>		
+										<?php
+											}
+											?>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#menss">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Jenis Ikan
+										</a>
+									</h4>
+								</div>
+								<div id="menss" class="panel-collapse collapse">
+									<div class="panel-body">
+									<?php
+										foreach ($brand->result_array() as $value) {?>
+										<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title"><a href="<?php echo base_url();?>home/brand/<?php echo $value['id_brand'];?>"><?php echo $value['nama_brand'];?></a></h4>
+										</div>
+										</div>		
+										<?php
+											}
+											?>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div>
+										<?php echo form_open('home/cari');?>
+										<div class="search_box pull-left">
+											<input style="font-size: medium;" type="text" name="cari" placeholder="Cari"/>
+										</div>
+										<?php echo form_close();?>
+									</div>
+								</div>
+							</div>
+							
+		
+						</div><!--/category-products--></br>
+
+						<!--<div class="brands_products">
+							<h2>Pengiriman</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<?php
+									foreach ($jasapengiriman->result_array() as $value) { ?>
+									<li><a href=""> <span class="pull-right"></span>
+										<img src="<?php echo base_url();?>images/jasapengiriman/<?php echo $value['gambar'];?>">
+										</a>
+									</li>
+									
+									<?php
+									}
+									?>
+									
+									
+								</ul>
+							</div>
+						</div>-->
+						
+						
+						
+						
+					
+					</div>
+				</div>
+				<?php
+
+						foreach ($data_produk->result_array() as $value) {
+							$id_produk 		= $value['id_produk'];
+							$kode_produk 	= $value['kode_produk'];
+							$nama_nelayan 	= $value['nama_nelayan'];
+							$harga 			= $value['harga'];
+							$stok 			= $value['stok'];
+							$deskripsi 		= $value['deskripsi'];
+							$gambar 		= $value['gambar'];
+							$nama_kategori 	= $value['nama_kategori'];
+							$nama_brand 	= $value['nama_brand'];
+							$no_hp 	= $value['nelayan'];
+						}
+
+						?>
+
+				<div class="col-sm-9 padding-right">
+					<div class="product-details"><!--product-details-->
+						<div class="col-sm-5">
+							<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+								<img width="200" height="200" src="<?php echo base_url();?>images/produk/<?php echo $gambar;?>" alt="" />
+								
+							</div>
+							</div>
+							</div>
+							
+
+						</div>
+						<div class="col-sm-6">
+							<div class="product-information"><!--/product-information-->
+								
+								<h2>Nama Pemasar : <?php echo $nama_nelayan;?></h2>
+								<p>Kode Produk: <?php echo $kode_produk;?></p>
+								
+								<span>
+									<span>Rp.<?php echo $this->cart->format_number($harga);?></span>
+									
+								
+									
+									<?php 				
+														date_default_timezone_set('Asia/Jakarta'); 
+														$a =date('Y-m-d');
+														if($value['stok']<=0||$a>=$value['tanggal']){
+														echo '<h3 class="btn btn-danger">Stok Habis</h3>';
+													}
+													else{
+														echo '<a href="'.base_url();?>home/keranjang/<?php echo $value['id_produk'];echo '"class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>';
+													}
+													?>
+													
+								</span>
+								<p><b>Jumlah : </b><?php echo $stok;?>.Kg</p>
+								<p><b>Category :</b> <?php echo $nama_kategori;?></p>
+								<p><b>Jenis Ikan :</b> <?php echo $nama_brand;?></p>
+								<p><?php echo $value['deskripsi'];?></p>
+								<a href="sms:<?php echo $no_hp ?>"><h4><i class="fa fa-phone"></i> SMS Pemasar</h></a>
+								<a href="https://wa.me/<?php echo $no_hp ?>" ><h4><img width="20" height="20" src="<?php echo base_url();?>asset/icon/wa.svg" ></img>Whatsapp Pemasar</h></a>
+								
+								
+								
+							</div><!--/product-information-->
+						</div>
+					</div><!--/product-details-->
+					
+					
+					
+					<div class="recommended_items"><!--recommended_items-->
+						<h2 class="title text-center">recommended items</h2>
+						
+						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner">
+										<div class="item active">	
+											<?php
+									foreach ($random_active->result_array() as $value) { ?>
+										<div class="col-xs-4">
+								<div class="single-products">
+								<div class="productinfo text-center">
+													<img width="100" height="100" src="<?php echo base_url();?>images/produk/<?php echo $value['gambar'];?>" alt="" />
+													<h5>Rp.<?php echo $this->cart->format_number($value['harga']);?></h5>
+													<a href="<?php echo base_url();?>home/produk/<?php echo $value['id_produk'];?>"><h5> <?php echo $value['nama_brand'];?></h5></a>
+													<?php
+														date_default_timezone_set('Asia/Jakarta'); 
+														$a =date('Y-m-d');
+														if($value['stok']<=0||$a>=$value['tanggal']){
+														echo '<h5 class="btn btn-danger">Stok Habis</h5>';
+													}
+													else{
+														echo '<h5><a href="'.base_url();?>home/produk/<?php echo $value['id_produk'].'"class="btn btn-primary">Detail</a></h5>';
+													}
+													?>
+													</div>
+									
+								</div>
+						</div>
+										<?php
+									}
+									?>
+									</div>
+									
+
+									
+									<div class="item">	
+										<?php
+									foreach ($random->result_array() as $value) { ?>
+										<div class="col-xs-4">
+								<div class="single-products">
+								<div class="productinfo text-center">
+													<img width="100" height="100" src="<?php echo base_url();?>images/produk/<?php echo $value['gambar'];?>" alt="" />
+													<h4>Rp.<?php echo $this->cart->format_number($value['harga']);?></h4>
+													<a href="<?php echo base_url();?>home/produk/<?php echo $value['id_produk'];?>"><h5> <?php echo $value['nama_brand'];?></h5></a>
+													<?php
+														date_default_timezone_set('Asia/Jakarta'); 
+														$a =date('Y-m-d');
+														if($value['stok']<=0||$a>=$value['tanggal']){
+														echo '<h5 class="btn btn-danger">Stok Habis</h5>';
+													}
+													else{
+														echo '<h5><a href="'.base_url();?>home/produk/<?php echo $value['id_produk'].'"class="btn btn-primary">Detail</a></h5>';
+													}
+													?>
+													</div>
+									
+								</div>
+						</div>
+										<?php
+									}
+									?>
+									</div>
+									
+										
+										
+
+							
+								
+							</div>
+							 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+								<i class="fa fa-angle-left"></i>
+							  </a>
+							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+								<i class="fa fa-angle-right"></i>
+							  </a>			
+						</div>
+					</div><!--/recommended_items-->
+					
+				</div>
+				
+				
+			</div>
+		</div>
+	</section>
+	
+	<footer id="footer"><!--Footer-->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="companyinfo">
+							<h2><span>SMART TPI MOROWALI</span></h2>
+							<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p> -->
+						</div>
+					</div>
+				
+					<div class="col-sm-3">
+						<div class="address">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2021 Informatika Untad. All rights reserved.</p>
+					
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
+	
+
+  
+    <script src="<?php echo base_url();?>asset/js/jquery.js"></script>
+	<script src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url();?>asset/js/jquery.scrollUp.min.js"></script>
+	<script src="<?php echo base_url();?>asset/js/price-range.js"></script>
+    <script src="<?php echo base_url();?>asset/js/jquery.prettyPhoto.js"></script>
+    <script src="<?php echo base_url();?>asset/js/main.js"></script>
+</body>
+</html>

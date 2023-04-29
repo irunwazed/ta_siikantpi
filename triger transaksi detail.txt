@@ -1,0 +1,4 @@
+BEGIN
+	UPDATE tbl_produk SET stok = stok-NEW.jumlah
+    WHERE kode_produk = New.kode_produk;
+END
